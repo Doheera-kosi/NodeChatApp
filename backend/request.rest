@@ -1,3 +1,6 @@
-POST http://localhost:3001/authenticate
-Content-Type: application/json
-{ "username": "ican" }
+POST http://localhost:3001/authenticate HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ican"
+}
