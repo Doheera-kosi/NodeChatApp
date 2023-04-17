@@ -1,16 +1,14 @@
-// import React from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import axios from "axios";
 
 const AuthPage = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
-    axios.post(
-        'http://localhost:3001/authenicate',
-        {username: value}
-    )
-    .then(r => props.onAuth({ ...r.data, secret: value}))
+    axios
+      .post("http://localhost:3001/authenticate", { username: value })
+      .then((r) => props.onAuth({ ...r.data, secret: value }))
+      .catch((e) => console.log("Auth Error", e));
   };
 
   return (
